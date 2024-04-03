@@ -1,0 +1,197 @@
+/* HTML: <div class="loader"></div> */
+.loader {
+    width: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    aspect-ratio: 1;
+    display: grid;
+    border-radius: 50%;
+    background:
+      linear-gradient(0deg ,rgb(0 0 0/50%) 30%,#0000 0 70%,rgb(0 0 0/100%) 0) 50%/8% 100%,
+      linear-gradient(90deg,rgb(0 0 0/25%) 30%,#0000 0 70%,rgb(0 0 0/75% ) 0) 50%/100% 8%;
+    background-repeat: no-repeat;
+    animation: l23 1s infinite steps(12);
+  }
+  .loader::before,
+  .loader::after {
+     content: "";
+     grid-area: 1/1;
+     border-radius: 50%;
+     background: inherit;
+     opacity: 0.915;
+     transform: rotate(30deg);
+  }
+  .loader::after {
+     opacity: 0.83;
+     transform: rotate(60deg);
+  }
+  @keyframes l23 {
+    100% {transform: rotate(1turn)}
+  }
+  
+.header {
+    cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #EEEEEE;
+    padding: 0.3rem 1rem;
+  }
+  
+.header-logo {
+    color: #00224D;
+    display: flex;
+  }
+ 
+.searchBar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem 0;
+    padding: 1rem;
+}
+
+.searchBar  input[type='text'] {
+    width: 50%;
+    color: #00224D;
+    font-size: 1rem;
+    outline: none;
+    border-radius: 10px 3px 3px 10px;
+    border: 1px solid #eeeeee;
+    padding: 0.6rem;
+    transition: all 0.2s linear;
+  }
+  
+ .searchBar input[type='text']:focus,
+ .searchBar select:focus,
+ .filterMenu select:focus {
+    border: 1px solid #9da6b8;
+  }
+
+ .searchBar button {
+    border-radius: 3px 10px 10px 3px;
+    border: 1px solid #fa5252;
+    background-color: #fff;
+    padding: 0.6rem 0.2rem;
+    margin-left: 2px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fa5252;
+    cursor: pointer;
+    transition: all 0.2s linear;
+ }
+ 
+.searchBar button:hover,
+.filterMenu button:hover,
+.article a:hover {
+    color: #fff;
+    background-color: #fa5252;
+ }
+
+ .searchBar select{
+    outline: none;
+    border: 1px solid #EEEEEE;
+    color: #00224D;
+    padding: 0.6rem 0.2rem;
+    font-size: 1rem;
+    transition: all 0.2s linear;
+ }
+
+ .filterMenu {
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1rem;
+  background-color: #eeeeee;
+  color: #fa5252;
+ }
+ .filtered {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+ }
+.filterMenu h4 {
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+}
+
+.filtered div{
+  width: 20%;
+}
+.filterMenu select{
+  width: 100%;
+  outline: none;
+  border: 1px solid #eeeeee;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  transition: all 0.2s linear;
+}
+
+.filterMenu button {
+  margin-top: 2rem;
+  padding: 0.4rem 1rem;
+  background-color: transparent;
+  color: #fa5252;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+  border: 1px solid #fa5252;
+  font-size: 1rem;
+  transition: all 0.2s linear;
+}
+
+.articles_grid {
+    display: flex;
+    flex-wrap : wrap; 
+    justify-content : center; 
+}
+
+.article {
+    width: 18rem;
+    margin: 1rem;
+}
+
+.article_image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
+.article a {
+  text-decoration: none;
+  color: #fa5252;
+  border: 1px solid #fa5252;
+  border-radius: 5px;
+  padding: 0.2rem;
+  transition: all 0.2s linear;
+}
+ .article_text{
+    margin-bottom: 1rem;
+ }
+  /*Responsive design*/
+  
+  @media (max-width: 768px) {
+    .searchBar input[type='text'],
+    .searchBar button,
+    .searchBar select {
+        font-size: 12px;
+        padding: 0.4rem 0.2rem;
+       }
+
+       .filterMenu {
+        flex-direction: column;
+        justify-content: space-between;
+      }
+    
+      .filterMenu div {
+        margin: 0 1rem;
+      }
+    .filterMenu select {
+      padding: 0.2rem 0;
+    }
+  }
